@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityFrameworkCore.Data.Context;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplication2.Models;
 
@@ -7,20 +8,23 @@ namespace WebApplication2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _appDbContext;
+        public HomeController(ILogger<HomeController> logger, AppDbContext dbContext)
         {
             _logger = logger;
+            _appDbContext = dbContext;
         }
 
         public IActionResult Index()
         {
+            
             return View();
         }
-
+        //get books from db
         public IActionResult Index2()
         {
-            return View();
+            var objBooks = _appDbContext.Books.ToList();
+            return View(objBooks);
         }
 
         public IActionResult Index3()
