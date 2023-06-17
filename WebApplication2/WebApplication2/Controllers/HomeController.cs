@@ -20,7 +20,7 @@ namespace WebApplication2.Controllers
             
             return View();
         }
-
+        //get books
         public IActionResult Index2()
         {
             var objBooks = _appDbContext.Books.ToList();
