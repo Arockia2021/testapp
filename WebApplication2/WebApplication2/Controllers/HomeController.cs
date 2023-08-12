@@ -21,12 +21,7 @@ namespace WebApplication2.Controllers
             return View();
         }
         //get books from db
-        public IActionResult Index2()
-        {
-            var objBooks = _appDbContext.Books.ToList();
-            return View(objBooks);
-        }
-
+        
         public IActionResult Privacy()
         {
             return View();
