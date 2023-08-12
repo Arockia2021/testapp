@@ -21,7 +21,11 @@ namespace WebApplication2.Controllers
             return View();
         }
         //get books from db
-        
+        public IActionResult Index2()
+        {
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
