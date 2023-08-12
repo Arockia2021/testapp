@@ -27,10 +27,6 @@ namespace WebApplication2.Controllers
             return View(objBooks);
         }
 
-        public IActionResult Index3()
-        {
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();
